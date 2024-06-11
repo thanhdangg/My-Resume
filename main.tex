@@ -1,0 +1,172 @@
+\documentclass[paper=a4,fontsize=12pt]{article}
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage[protrusion=true,expansion=true]{microtype}
+\usepackage{amsmath,amsfonts,amsthm}     
+\usepackage{graphicx}                   
+\usepackage[svgnames]{xcolor}           
+\usepackage{geometry}
+\textheight=700px                   
+\usepackage{url}
+\usepackage{multicol}
+\usepackage{parcolumns}
+\usepackage{lipsum}
+\usepackage{adjustbox}
+\usepackage{tabularx}
+\usepackage{fontawesome5}
+\usepackage{hyperref}
+
+\definecolor{mygreen}{HTML}{228B22}
+\title{My CV}
+\author{Dang Nguyen Thanh}
+\date{June 2024}
+
+\frenchspacing            
+\pagestyle{empty}          
+\usepackage{sectsty}
+
+\sectionfont{%			            % Change font of \section command
+	\usefont{OT1}{phv}{b}{n}%		% bch-b-n: CharterBT-Bold font
+	\sectionrule{0pt}{0pt}{-5pt}{3pt}}
+
+\newlength{\spacebox}
+\settowidth{\spacebox}{8888888888}			% Box to align text
+\newcommand{\sepspace}{\vspace*{1em}}		% Vertical space macro
+
+\newcommand{\NewPart}[1]{ \color{mygreen} \section*{\uppercase{#1}} \color{black}}
+
+\newcommand{\MyName}[1]{ % Name
+	\Huge \usefont{OT1}{phv}{b}{n} \hfill #1
+	\par \normalsize \normalfont}
+\newcommand{\Job}[1]{ % Name
+	\Huge \hfill #1
+	\par \normalsize \normalfont}
+
+\newcommand{\MySlogan}[1]{ % Slogan (optional)
+	\large \usefont{OT1}{phv}{m}{n}\hfill \textit{#1}
+	\par}
+ 
+ \newcommand{\Quote}[1]{
+    \large \color{mygreen} \faCode 
+    \normalsize \color{black} \normalsize \hfill \usefont{OT1}{phv}{m}{n} \textit{#1} 
+    \color{black} \normalsize  \normalfont}
+
+\newcommand{\PersonalEntry}[2]{
+	\noindent\hangindent=2em\hangafter=0 % Indentation
+	\makebox[6em][l]{\textit{#1}}		       % Entry name (birth, address, etc.)
+	\hspace{1.5em} #2 \par}    % Entry value
+ 
+\newcommand{\EducationEntry}[2]{
+	\noindent \textbf{#1} \hfill      % Study
+	\colorbox{mygreen}{%
+		\parbox{6em}{%
+			\hfill\color{White}#2}} \par  % Duration
+	\normalsize \par}
+
+\newcommand{\InforEducationEntry}[2]{
+	\noindent\hangindent=2em\hangafter=0 % Indentation
+	\makebox[4em][l]{\textit{#1}}		       % Entry name (birth, address, etc.)
+	\hspace{1.5em} #2 \par} 
+ 
+ \newcommand{\SkillsEntry}[2]{      % Same as \PersonalEntry
+	\noindent\hangindent=2em\hangafter=0 % Indentation
+	\makebox[10em][l]{\textit{#1}}			   % Entry name (birth, address, etc.)
+	\hspace{2em} #2 \par}    % Entry value	
+ 
+\newcommand{\ProjectEntry}[6]{
+	\noindent \textbf{#1} \hfill      % Study
+	\noindent \colorbox{mygreen}{%
+        \makebox[7em][l]{\color{white}#2}} \par % Duration
+    \noindent \texttt{}{#3} \par      % Role
+    \noindent\hangindent=2em\hangafter=0 \small Project description: #4 \par% Description
+    \noindent\text{Size of project: #5} \par 
+    \noindent \textit{Source: \href{#6}{#6}} \par      % Source
+	\normalsize \par}
+
+\newcommand{\AwardEntry}[2]{      % Same as \PersonalEntry
+	\noindent\hangindent=1em\hangafter=0 % Indentation
+	\begin{tabular}{@{}p{8em}@{}p{\dimexpr\linewidth-10em\relax}@{}}
+        {\textit{#1}} & #2 \\
+    \end{tabular} \par}   % Entry value	
+
+\begin{document}
+    \noindent
+    
+	\begin{minipage}[t]{0.3\textwidth}
+		\includegraphics[scale=0.075]{cropprofile.png}
+	\end{minipage}
+	\hfill
+	\begin{minipage}[t]{0.65\textwidth}
+		\begin{adjustbox}{valign=b}
+			\begin{tabularx}{\textwidth}{X}
+				\MyName{Nguyen Thanh Dang}
+                    \Job{Intern AI Developer}
+                    \begin{flushright}
+                        \href{https://www.facebook.com/NgThaDa/}{\huge \faFacebook}
+                        \hspace{0.6cm}
+                        \href{https://github.com/thanhdangg}{\huge \faGithub}
+                        \hspace{0.6cm}
+                        \href{https://github.com/ngthadangg}{\huge \faGithub}
+                        \hspace{0.6cm}
+                        \href{https://www.linkedin.com/in/ngthadang/}{\huge \faLinkedin}
+                        \hspace{0.6cm}
+                        \href{mailto:dangnghialap2003@gmail.com}{\huge \faInbox}
+                    \end{flushright}
+                    \begin{center}
+                        \begin{tabular}{@{}p{2em}@{}p{\dimexpr\linewidth/2-2em}@{}p{2em}@{}p{\dimexpr\linewidth/4-8em}@{}}
+                            \faBirthdayCake & \text{09/09/2003} & \faPhone* & \text{033 714 0663} \\
+                        \end{tabular}
+                        \begin{tabular}{@{}p{2em}@{}p{\dimexpr\linewidth-8.5em\relax}@{}}
+                            \faMapMarker* & \text{K120 Nguyen Luong Bang, Lien Chieu, Da Nang} \\
+                        \end{tabular}
+                    \end{center}    
+			\end{tabularx}
+			
+		\end{adjustbox}
+	\end{minipage}
+	
+	\sepspace
+    \Quote{I am a cheerful, sociable and responsible person. I hope to apply the knowledge I have learned to reallife projects to improve my skills as well as contribute to the company. Desire to learn more knowledge from colleagues to improve own capabilities.}
+
+ 
+    \NewPart{Education}{}
+    \EducationEntry{Da Nang University of Science and Technology}{2021-Present}
+    
+    \InforEducationEntry{Faculty}{Information and Technology}
+    \InforEducationEntry{Major}{Data Science and Artificial Intelligence}
+    \InforEducationEntry{Level}{Third-year student}
+    \InforEducationEntry{GPA}{3.59 / 4}
+	\sepspace
+
+    \NewPart{Skills}
+    \SkillsEntry{Language}{English (good)}
+    \SkillsEntry{Programming Languages}{Python, Java, C/C++, Javascript, PHP, ...}
+    \SkillsEntry{Framework}{Flask, Bootstrap, TailwindCSS,...}
+    \SkillsEntry{Database}{Firebase, MySQL, SQLite, SQL Server}
+    \SkillsEntry{Version control}{Git}
+    \SkillsEntry{Team work}{Github, Trello, Jira}
+
+    \sepspace
+    
+    \NewPart{Work experience}
+    \ProjectEntry{PBL5: \color{mygreen} Smart Home \color{black} - Control devices by voice}{Feb - Jun 2024}{Leader - Train model AI, Mobile Develop}{The smart home system uses the Micro module to collect audio data, send it to the ESP32 and then send it to the AI server to identify commands, the server will return the command code to control the device.The model used for training is the LSTM network. The results of model training have been achieved with high accuracy [\href{https://drive.google.com/file/d/1MDi0a4-YHMgpJ9z-CKUW4UyQGnm6LV_X/view?usp=sharing}{[Read more]}]}{4}{https://github.com/thanhdangg/SmartHome}
+
+    \sepspace
+    
+    \ProjectEntry{\color{mygreen} Plant Disease \color{black} - Data Science final project}{May 2024}{Leader - Train model AI, Mobile Develop}{Early identification of plant diseases helps farmers avoid losses. From that idea, we built a model to identify diseases on trees. We conducted training with different neural networks such as ResNet, Denset, MobileNet, VGG, etc. and selected the best networks to include in the mobile application to identify plant diseases.[\href{https://drive.google.com/file/d/1bEOQlzSi2HaJgbCvb6D8F_tk_YZaQApP/view?usp=sharing}{[Read more]}]}{4}{https://github.com/thanhdangg/Plant-Disease}
+    
+    \newpage
+
+
+    \ProjectEntry{\color{mygreen} ChitChater \color{black} - Mobile Messaging application}{May 2024}{Member - Mobile Develop}{Messaging app, uses Firebase for database, NodeJS for Backend and Kotlin for Android. We bu}{3}{https://github.com/TraMyNguyen39/ChitChatter}
+    \sepspace
+
+    \ProjectEntry{PBL4: \color{mygreen} KidLogger \color{black} - Child monitoring program}{Sep - Dec 2023}{Leader - Fullstack}{The program provides a comprehensive solution for parents to monitor and protect their children through screen monitoring, keyboard monitoring, browsing history monitoring, and blocking harmful websites that cause harmful effects. affects children, etc. Use Firebase to store database and build server with Flask[\href{https://drive.google.com/file/d/1olVKfFTFhYderw0L1cxoU9YCEDvEBPCq/view?usp=sharing}{[Read more]}]}{2}{https://github.com/thanhdangg/PBL4}
+    \sepspace
+
+    \NewPart{Achievements \& Honors}
+    \AwardEntry{2021}{Appellation "\textbf{Honorary Student of the whole school}" was awarded by the Chairman of the People's Committee of Thua Thien Hue province}
+    \sepspace
+    \AwardEntry{2021 - past}{Won second and third prizes in competitions for excellent math students at the Thua Thien Hue provincial level}
+
+\end{document}
